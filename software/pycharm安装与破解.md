@@ -47,3 +47,12 @@ Categories=Pycharm;
 ```
 其中exec与icon分别对应pycharm启动脚本以及pycharm图标的位置，在pycharm-professional-2020.1解压文件对应位置
 
+**将pycharm启动图标添加到启动器（launcher）：**
+其实就是赋予pycharm.desktop可执行权限即可，对应命令如下：
+```
+cd /usr/share/applications/
+sudo chmod u+x pycharm.desktop 
+```
+通过ls可以看出，pycharm.desktop已经由灰白色变为了绿色（可执行文件的颜色）
+进而启动pycharm右键添加到favorites即可完成。
+
