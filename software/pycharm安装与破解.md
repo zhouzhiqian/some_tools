@@ -28,3 +28,31 @@
 右边的theme即为主题，默认包含黑色主题Darcula，白色主题Intellij Light ，以及黑白对比更为突兀的High Contrast
 
 也可以在Background Image选项中，选择自己喜欢的图片，作为背景。
+
+**生成桌面快捷启动方式：**
+```
+sudo gedit /usr/share/applications/pycharm.desktop
+```
+将文件修改为：
+```
+[Desktop Entry]
+Type=Application
+Name=Pycharm
+GenericName=Pycharm3
+Comment=Pycharm3:The Python IDE
+Exec=sh /home/fetch/workspace/zhiqian/software/pycharm-professional-2020.1/pycharm-2020.1/bin/pycharm.sh   
+Icon=/home/fetch/workspace/zhiqian/software/pycharm-professional-2020.1/pycharm-2020.1/bin/pycharm.png
+Terminal=pycharm
+Categories=Pycharm;
+```
+其中exec与icon分别对应pycharm启动脚本以及pycharm图标的位置，在pycharm-professional-2020.1解压文件对应位置
+
+**将pycharm启动图标添加到启动器（launcher）：**
+其实就是赋予pycharm.desktop可执行权限即可，对应命令如下：
+```
+cd /usr/share/applications/
+sudo chmod u+x pycharm.desktop 
+```
+通过ls可以看出，pycharm.desktop已经由灰白色变为了绿色（可执行文件的颜色）
+进而启动pycharm右键添加到favorites即可完成。
+
